@@ -3,7 +3,6 @@ import React from 'react'
 import { PinContainer } from '../ui/3dPin'
 import { Send } from 'lucide-react'
 import Image from 'next/image'
-import { cn } from '@/lib/utils'
 
 const Projects = () => {
   return (

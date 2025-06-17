@@ -14,9 +14,49 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PhantomDev Portfolio",
-  description: "Modern NextJs Portfolio by PhantomDev",
+  title: "PhantomDev Portfolio | Creative Next.js Showcase",
+  description: "Modern, interactive, and blazing-fast Next.js portfolio by PhantomDev, UI-rich, performance-focused.",
+  keywords: ["PhantomDev", "Next.js Portfolio", "Frontend Developer", "React", "JavaScript", "Tailwind CSS"],
+  authors: [{ name: "Mr Phantom X", url: "https://your-domain.vercel.app" }],
+  creator: "Mr Phantom X",
+  metadataBase: new URL("https://your-domain.vercel.app"),
+
+  openGraph: {
+    title: "PhantomDev Portfolio | Creative Next.js Showcase",
+    description: "Modern, interactive, and blazing-fast Next.js portfolio by PhantomDev, UI-rich, performance-focused.",
+    url: "https://your-domain.vercel.app",
+    siteName: "PhantomDev",
+    images: [
+      {
+        url: "/portfolio.jpg",
+        width: 1200,
+        height: 630,
+        alt: "PhantomDev Portfolio Preview",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "PhantomDev Portfolio | Creative Next.js Showcase",
+    description: "Check out the blazing-fast portfolio by Mr Phantom X, built with Next.js & Tailwind.",
+    images: ["/portfolio.jpg"],
+    creator: "@PhantomXDev", 
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
 };
+
 
 export default function RootLayout({
   children,

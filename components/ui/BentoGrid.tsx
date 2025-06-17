@@ -154,6 +154,10 @@ export const BentoGridItem = ({
               </div>        
               <button
                 className="inline-flex h-12 animate-shimmer items-center justify-center rounded-xl border bg-[#c3dae8d3] dark:bg-[#1c182bd3] border-red-400/[0.7] bg-[length:200%_100%] px-5 font-medium text-gray-700 dark:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 mt-5 hover:px-2 hover:h-10 flex-row gap-2"
+                onClick={() => {
+                                setIsAnimating(true);
+                                setTimeout(() => setIsAnimating(false), 3000); 
+                        }}
               >
                 Thumbs Up <ThumbsUp size={16}/>      
               </button>
