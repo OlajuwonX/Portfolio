@@ -53,20 +53,18 @@ export const PinContainer = ({
           }}
           className="absolute left-1/2 p-4 top-1/2  flex justify-start items-start bg-[#c3dae8d3] dark:bg-[#1c182bd3] rounded-2xl  shadow-[0_8px_16px_rgb(0_0_0/0.4)] border border-red-400/[0.4] group-hover/pin:border-white/[0.2] transition duration-700 overflow-hidden"
         >
-          <div className={cn(" relative z-50 ", className)}>{children}</div>
+          <div className={cn(" relative z-50", className)}>{children}</div>
         </div>
       </div>
-      <PinPerspective title={title} href={href} />
+      <PinPerspective title={title} />
     </a>
   );
 };
 
 export const PinPerspective = ({
   title,
-  href,
 }: {
   title?: string;
-  href?: string;
 }) => {
   return (
     <motion.div className="pointer-events-none  w-full h-80 flex items-center justify-center opacity-0 group-hover/pin:opacity-100 z-[60] transition duration-500">

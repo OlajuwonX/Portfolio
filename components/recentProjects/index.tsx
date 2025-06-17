@@ -2,6 +2,8 @@ import { projects } from '@/data'
 import React from 'react'
 import { PinContainer } from '../ui/3dPin'
 import { Send } from 'lucide-react'
+import Image from 'next/image'
+import { cn } from '@/lib/utils'
 
 const Projects = () => {
   return (
@@ -13,14 +15,14 @@ const Projects = () => {
         </span>
       </h1>
       <div className=' flex flex-wrap items-center justify-center p-4 gap-x-13 mt-4'>
-        {projects.map(({id, title, des, img, iconLists, link }) =>
-        <div key={id} className='sm:h-[28rem] lg:min-h-[32.5rem] h-[32rem] flex items-center justify-center sm:w-[570px] w-[70vw] '>
+        {projects.map(({id, title, des, img, iconLists, link, imgHeight, imgWidth }) =>
+        <div key={id} className='sm:h-[28rem] lg:min-h-[32.5rem] h-[32rem] flex  items-center justify-center sm:w-[570px] w-[70vw] lg:mb-0.5 mb-[-5px]'>
           <PinContainer title={link} href={link}>
-            <div className='relative flex items-center justify-center sm:w-[570px] w-[67vw] lg:w-[35vw] overflow-hidden sm:h[40vh] h-[27vh] mb-10 '>
-              <div className='relative w-full h-full overflow-hidden lg:rounded-3xl bg-[#13162d] '>
-                <img src="/bg.png" alt="bg-img" />
-              </div>
-              <img src={img} alt={title} className='z-10 absolute bottom-0'/>
+            <div className='relative flex items-center justify-center sm:w-[570px] w-[67vw] lg:w-[35vw] overflow-hidden sm:h[40vh] h-[15vh] min-h-[240px] mb-9 '>
+              {/* <div className='relative w-full h-full overflow-hidden lg:rounded-3xl bg-[#13162d] '>
+                <Image src="/bg.png" alt="bg-img" />
+              </div> */}
+              <Image src={img} alt={title} height={imgHeight} width={imgWidth} className='w-full h-auto object-contain  z-10 relative '/>
             </div>
             <h1 className='font-bold lg:text-2xl md:text-xl text-base line-clamp-1'>
               {title}
@@ -37,14 +39,14 @@ const Projects = () => {
                   style={{
                     transform: `translateX(-${5 * index * 2}px)`}}
                   >
-                    <img src={icon} alt={icon} className='p-2'/>
+                    <Image src={icon} alt={icon} width={38} height={38} className='p-2'/>
                   </div>
                 ))}
               </div>
 
               <div className='flex justify-center items-center'>
-                <p className='flex lg:text-xl md:text-xs text-sm text-gray-700'>Check Live Site</p>
-                <Send className='m-3' color='#CBACF9' />
+                <p className='flex lg:text-xl md:text-sm text-sm'>Visit Project</p>
+                <Send className='m-3' size={18} color='green' />
               </div>
             </div>
           </PinContainer>

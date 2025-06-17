@@ -62,13 +62,12 @@ const Hero = () => {
               PhantomDev Portfolio powered by Next.js
             </motion.h2>
 
-            <TextRevealCard 
-            revealText=''
+            <TextRevealCard
             text='Bridging Creativity and Usability.'
             /> 
 
             <TextGenerateEffect 
-            words='I&apos;m Olajuwon Olasimbo, a frontend developer with over 2 years of experience building websites using React, Next.js and TypeScript. I specialize in creating fast, responsive and user-friendly interfaces with modern tools like Tailwind CSS, ShadCN and Aceternity UI. My focus is on clean code and seamless user experiences. Let&apos;s work together to bring your ideas to life.'
+            words='Hi I&apos;m Olajuwon Olasimbo, a frontend developer with over 2years experience in building websites using ReactJs, NextJs and TypeScript. I specialize in creating fast, responsive and user-friendly interfaces with modern tools like TailwindCSS, ShadCN and Aceternity UI. My focus is on clean code and seamless user experiences. Let&apos;s work together to bring your ideas to life.'
             className='text-center md:tracking-wider mb-4 text-[18px] md:text-lg lg:text-2xl'
             />
 

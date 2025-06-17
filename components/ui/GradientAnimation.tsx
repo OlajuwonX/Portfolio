@@ -39,6 +39,7 @@ export const BackgroundGradientAnimation = ({
   const [curY, setCurY] = useState(0);
   const [tgX, setTgX] = useState(0);
   const [tgY, setTgY] = useState(0);
+
   useEffect(() => {
     document.body.style.setProperty(
       "--gradient-background-start",
@@ -56,10 +57,34 @@ export const BackgroundGradientAnimation = ({
     document.body.style.setProperty("--pointer-color", pointerColor);
     document.body.style.setProperty("--size", size);
     document.body.style.setProperty("--blending-value", blendingValue);
-  }, []);
+
+    return () => {
+      document.body.style.removeProperty("--gradient-background-start");
+      document.body.style.removeProperty("--gradient-background-end");
+      document.body.style.removeProperty("--first-color");
+      document.body.style.removeProperty("--second-color");
+      document.body.style.removeProperty("--third-color");
+      document.body.style.removeProperty("--fourth-color");
+      document.body.style.removeProperty("--fifth-color");
+      document.body.style.removeProperty("--pointer-color");
+      document.body.style.removeProperty("--size");
+      document.body.style.removeProperty("--blending-value");
+    };
+  }, [
+    gradientBackgroundStart,
+    gradientBackgroundEnd,
+    firstColor,
+    secondColor,
+    thirdColor,
+    fourthColor,
+    fifthColor,
+    pointerColor,
+    size,
+    blendingValue,
+  ]);
 
   useEffect(() => {
-    function move() {
+    const move = () => {
       if (!interactiveRef.current) {
         return;
       }
@@ -68,10 +93,11 @@ export const BackgroundGradientAnimation = ({
       interactiveRef.current.style.transform = `translate(${Math.round(
         curX
       )}px, ${Math.round(curY)}px)`;
-    }
+    };
 
-    move();
-  }, [tgX, tgY]);
+    const animationFrameId = requestAnimationFrame(move);
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [tgX, tgY, curX, curY]);
 
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
     if (interactiveRef.current) {

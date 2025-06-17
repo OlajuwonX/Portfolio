@@ -1,6 +1,7 @@
 import { socialMedia } from '@/data'
 import { ThumbsUp } from 'lucide-react'
 import React from 'react'
+import Image from 'next/image';
 
 const Footer = () => {
   return (
@@ -27,7 +28,7 @@ const Footer = () => {
                         className='w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter  backdrop-blur-lg saturate-200 bg-[#16131ed3] rounded-lg border mt-2'
                         >
                             <a href={profile.link} target='_blank' rel='noopener noreferrer'>
-                                <img src={profile.img} alt={profile.img} width={20} height={20} />
+                                <Image src={profile.img} alt={profile.img} width={20} height={20} />
                             </a>
                         </div>
                     ))}
