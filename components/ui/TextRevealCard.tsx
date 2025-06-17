@@ -12,53 +12,17 @@ export const TextRevealCard = ({
   children?: React.ReactNode;
   className?: string;
 }) => {
-  const [widthPercentage, setWidthPercentage] = useState(0);
   const cardRef = useRef<HTMLDivElement>(null);
-  const [left, setLeft] = useState(0);
-  const [localWidth, setLocalWidth] = useState(0);
 
+  // Optional: Still tracking dimensions in case you want future use
   useEffect(() => {
     if (cardRef.current) {
-      const { left, width: localWidth } =
-        cardRef.current.getBoundingClientRect();
-      setLeft(left);
-      setLocalWidth(localWidth);
+      cardRef.current.getBoundingClientRect(); // No setState needed now
     }
   }, []);
 
-  function mouseMoveHandler(event: React.MouseEvent<HTMLDivElement>) {
-    event.preventDefault();
-    const { clientX } = event;
-    if (cardRef.current) {
-      const relativeX = clientX - left;
-      setWidthPercentage((relativeX / localWidth) * 100);
-    }
-  }
-
-  function mouseLeaveHandler() {
-    setWidthPercentage(0);
-  }
-
-  function mouseEnterHandler() {
-  }
-
-  function touchMoveHandler(event: React.TouchEvent<HTMLDivElement>) {
-    event.preventDefault();
-    const clientX = event.touches[0].clientX;
-    if (cardRef.current) {
-      const relativeX = clientX - left;
-      setWidthPercentage((relativeX / localWidth) * 100);
-    }
-  }
-
   return (
     <div
-      onMouseEnter={mouseEnterHandler}
-      onMouseLeave={mouseLeaveHandler}
-      onMouseMove={mouseMoveHandler}
-      onTouchStart={mouseEnterHandler}
-      onTouchEnd={mouseLeaveHandler}
-      onTouchMove={touchMoveHandler}
       ref={cardRef}
       className={cn(
         "text-center rounded-lg p-3 relative overflow-hidden",
@@ -81,7 +45,7 @@ const Stars = () => {
   const randomMove = () => Math.random() * 4 - 2;
   const randomOpacity = () => Math.random();
   const random = () => Math.random();
-  
+
   return (
     <div className="absolute inset-0">
       {[...Array(80)].map((_, i) => (
