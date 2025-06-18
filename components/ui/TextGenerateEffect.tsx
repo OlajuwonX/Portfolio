@@ -24,11 +24,11 @@ export const TextGenerateEffect = ({
         filter: filter ? "blur(0px)" : "none",
       },
       {
-        duration: duration ? duration : 0.6,
+        duration,
         delay: stagger(0.1),
       }
     );
-  }, [animate, filter, duration, scope.current]);
+  }, [animate, filter, duration]);
 
   const renderWords = () => {
     return (
