@@ -4,6 +4,7 @@ import Grid from "@/components/grid";
 import Hero from "@/components/hero/hero";
 import Projects from "@/components/recentProjects";
 import Clients from "@/components/testimonials";
+import AnimatedSection from "@/components/ui/animatedSection";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
 import { ModeToggle } from "@/components/ui/ToggleMode";
 import { navItems } from "@/data";
@@ -20,11 +21,21 @@ export default function Home() {
         /> 
         <Hero />
         <div className="px-7">
-        <Grid />
-        <Projects />
-        <Clients />
-        <Experience />
-        <Footer />
+          <AnimatedSection>
+          <Grid />
+          </AnimatedSection>
+        <AnimatedSection>
+          <Projects />
+          </AnimatedSection>
+        <AnimatedSection>      
+          <Clients />
+          </AnimatedSection>
+        <AnimatedSection>
+          <Experience />
+          </AnimatedSection>
+        <AnimatedSection>       
+          <Footer />
+          </AnimatedSection>
         </div>
       </div>
     </main>
