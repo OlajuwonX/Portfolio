@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./GradientAnimation";
 import { GlobeDemo } from "./GridGlobe";
-import Lottie from "react-lottie";
+import Lottie from "lottie-react";
 import { useState } from "react";
 import animationData from "@/data/confetti.json";
 import { ThumbsUp } from "lucide-react";
@@ -20,7 +20,7 @@ export const BentoGrid = ({
     <div
       className={cn(
         "mx-auto grid max-w-7xl grid-cols-1 gap-4 md:auto-rows-[18rem] md:grid-cols-3",
-        className,
+        className
       )}
     >
       {children}
@@ -60,10 +60,10 @@ export const BentoGridItem = ({
   const callLink = `tel:${phoneNumber}`;
 
   const copyToClipboard = () => {
-    if (typeof navigator !== "undefined" && navigator.clipboard) {
+    if (navigator?.clipboard) {
       navigator.clipboard.writeText(phoneNumber)
         .then(() => alert("📞 Number copied to clipboard!"))
-        .catch((err) => alert("❌ Failed to copy. Try again."));
+        .catch(() => alert("❌ Failed to copy. Try again."));
     } else {
       alert("Clipboard API not supported in this browser.");
     }
@@ -89,6 +89,7 @@ export const BentoGridItem = ({
             />
           )}
         </div>
+
         <div className={`absolute right-0 -bottom-5 ${id === 5 && "w-full opacity-80"}`}>
           {spareImg && (
             <Image
@@ -101,9 +102,7 @@ export const BentoGridItem = ({
           )}
         </div>
 
-        {id === 6 && (
-          <BackgroundGradientAnimation />
-        )}
+        {id === 6 && <BackgroundGradientAnimation />}
 
         <div
           className={cn(
@@ -153,22 +152,16 @@ export const BentoGridItem = ({
                 Let&apos;s build something that stands out.
               </p>
 
-              <div className="absolute -bottom-5 right-0 z-0 pointer-events-none">
-                <Lottie
-                  options={{
-                    loop: false,
-                    autoplay: isAnimating,
-                    animationData,
-                    rendererSettings: {
-                      preserveAspectRatio: "xMidYMid slice",
-                    },
-                  }}
-                  height={200}
-                  width={400}
-                  isStopped={!isAnimating}
-                  isPaused={!isAnimating}
-                />
-              </div>
+              {isAnimating && (
+                <div className="absolute -bottom-5 right-0 z-0 pointer-events-none">
+                  <Lottie
+                    animationData={animationData}
+                    loop={false}
+                    autoplay
+                    style={{ width: 400, height: 200 }}
+                  />
+                </div>
+              )}
 
               <div className="flex flex-col lg:flex-row gap-2">
                 <button
@@ -184,7 +177,7 @@ export const BentoGridItem = ({
 
                 <a
                   href={callLink}
-                  className="inline-flex h-12 items-center justify-center rounded-xl border bg-[#5e6f87] dark:bg-[#292b41] border-red-400/[0.7] px-5 font-medium text-white transition-colors hover:bg-[#475569]"
+                  className="inline-flex h-12 items-center justify-center rounded-xl border bg-[#372a21de] border-red-400/[0.7] px-2 font-medium text-white transition-colors hover:bg-[#475569]"
                 >
                   📞 Call Me
                 </a>
