@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from '@vercel/analytics/react'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,14 +19,14 @@ export const metadata: Metadata = {
   title: "PhantomDev Portfolio | Creative Next.js Showcase",
   description: "Modern, interactive, and blazing-fast Next.js portfolio by PhantomDev, UI-rich, performance-focused.",
   keywords: ["PhantomDev", "Next.js Portfolio", "Frontend Developer", "React", "JavaScript", "Tailwind CSS"],
-  authors: [{ name: "Mr Phantom X", url: "https://your-domain.vercel.app" }],
+  authors: [{ name: "Mr Phantom X", url: "https://phantomdev2.vercel.app" }],
   creator: "Mr Phantom X",
-  metadataBase: new URL("https://your-domain.vercel.app"),
+  metadataBase: new URL("https://phantomdev2.vercel.app"),
 
   openGraph: {
     title: "PhantomDev Portfolio | Creative Next.js Showcase",
     description: "Modern, interactive, and blazing-fast Next.js portfolio by PhantomDev, UI-rich, performance-focused.",
-    url: "https://your-domain.vercel.app",
+    url: "https://phantomdev2.vercel.app",
     siteName: "PhantomDev",
     images: [
       {
@@ -80,6 +81,7 @@ export default function RootLayout({
             {children}
         </ThemeProvider>
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
