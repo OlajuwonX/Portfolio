@@ -167,7 +167,7 @@ export const socialMedia = [
   {
     id: 2,
     img: "/twit.svg",
-    link: "https://x.com/yung_in01",
+    link: "https://x.com/PhantomXDev",
   },
   {
     id: 3,
