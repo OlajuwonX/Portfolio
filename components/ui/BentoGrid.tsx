@@ -6,7 +6,6 @@ import { GlobeDemo } from "./GridGlobe";
 import Lottie from "lottie-react";
 import { useState } from "react";
 import animationData from "@/data/confetti.json";
-import { ThumbsUp } from "lucide-react";
 import Image from "next/image";
 
 export const BentoGrid = ({
@@ -56,18 +55,10 @@ export const BentoGridItem = ({
   spareImgWidth?: number;
 }) => {
   const [isAnimating, setIsAnimating] = useState(false);
+
   const phoneNumber = "+2348123806786";
   const callLink = `tel:${phoneNumber}`;
-
-  const copyToClipboard = () => {
-    if (navigator?.clipboard) {
-      navigator.clipboard.writeText(phoneNumber)
-        .then(() => alert("📞 Number copied to clipboard!"))
-        .catch(() => alert("❌ Failed to copy. Try again."));
-    } else {
-      alert("Clipboard API not supported in this browser.");
-    }
-  };
+  const whatsappLink = `https://wa.me/2348123806786?text=Hey%20Mr%20Phantom%20X%2C%20I%20checked%20out%20your%20portfolio!`;
 
   return (
     <div
@@ -164,16 +155,18 @@ export const BentoGridItem = ({
               )}
 
               <div className="flex flex-col lg:flex-row gap-2">
-                <button
-                  className="inline-flex h-12 animate-shimmer items-center justify-center rounded-xl border bg-[#c3dae8d3] dark:bg-[#1c182bd3] border-red-400/[0.7] bg-[length:200%_100%] px-5 font-medium text-gray-700 dark:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 hover:px-2 hover:h-10 flex-row gap-2 cursor-pointer"
+                <a
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => {
                     setIsAnimating(true);
-                    copyToClipboard();
                     setTimeout(() => setIsAnimating(false), 3000);
                   }}
+                  className="inline-flex h-12 items-center justify-center rounded-xl border bg-[#25d36591] border-red-400/[0.7] px-4 font-medium text-white transition-colors hover:bg-[#1ebe5d] gap-2"
                 >
-                  Copy My Number <ThumbsUp size={16} />
-                </button>
+                  💬 WhatsApp Me
+                </a>
 
                 <a
                   href={callLink}
