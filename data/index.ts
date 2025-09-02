@@ -85,7 +85,7 @@ export const projects = [
   {
     id: 1,
     title: "XquisEat_webapp",
-    des: "XquisEat is a responsive React web application built with Vite, designed as a food delivery landing page. The project is currently a work in progress, with continuous enhancements underway. It includes essential features such as efficient state management, a dark and light mode toggle, a functional cart, user authentication with a sign-in page and a streamlined checkout process.",
+    des: "XquisEat is a responsive React web application built with Vite, designed as a food delivery landing page. It includes essential features such as efficient state management, a dark and light mode toggle, a functional cart, user authentication with a sign-in page and a streamlined checkout process.",
     img: "/xquisEat.png",
     imgWidth: 800,
     imgHeight: 600,
@@ -95,8 +95,9 @@ export const projects = [
   {
     id: 2,
     title: "Xpay E-commerce webapp",
-    des: "Xpay is an eCommerce web app built with Vite, inspired by marketplaces like Jumia but with a unique touch. I designed it to feel different and more refined. It features light and dark mode toggles, a functional cart system and a modal-based product preview using portals, my first time implementing them. With many core features already in place, I'm working towards evolving Xpay into a full-stack solution with even more powerful capabilities.",
-    img: "/xpay.png",
+    des: "Xpay is an e-commerce web app built with Vite, inspired by marketplaces like Jumia but with a unique" +
+        " touch. I designed it to feel different and more refined.",
+    img: "/orvyn.png",
     imgWidth: 800,
     imgHeight: 600,
     iconLists: [ "/re.svg", "/tail.svg", "/ts.svg", "/c.svg"],
@@ -104,23 +105,25 @@ export const projects = [
   },
   {
     id: 3,
-    title: "Homyz Real Estate Webapp",
-    des: "Homyz is a real estate web app and my first React project. It features a dashboard, dark/light mode toggle, and simple navigation. Though the UI needs refinement, it marked my first use of Framer Motion, which built my passion for animations in web design. Open to future improvements as I grow as a developer.",
-    img: "/homyz.png",
+    title: "Orvyn Media",
+    des: "Orvyn media is a landing page for a social media management company.",
+    img: "/xpay.png",
     imgWidth: 800,
     imgHeight: 600,
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/c.svg"],
-    link: "https://realestate-efg.pages.dev",
+    iconLists: [ "/re.svg", "/tail.svg", "/ts.svg", "/c.svg"],
+    link: "https://www.orvynmedia.com/",
   },
   {
     id: 4,
-    title: "PhantomFitClub webapp",
-    des: "PhantomFitClub is a React fitness web app that uses Email.js to send real-time subscription notifications, enabling easy user engagement and community building.",
-    img: "/phantomfitclub.png",
+    title: "LINKA",
+    des: "Linka is a real time web application that enables real time messaging and sharing of images using" +
+        " socket.io, I used mongoDb for database storage, cloudinary to handle image storage, jwt for" +
+        " authentication, bcrypt to hash passwords and zustand for global state management",
+    img: "/linka.png",
     imgWidth: 800,
     imgHeight: 600,
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg"],
-    link: "https://phantomfitclub.pages.dev",
+    link: "https://chatapp-84n6.onrender.com",
   },
 ];
 
