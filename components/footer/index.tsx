@@ -18,7 +18,7 @@ const Footer = () => {
                 >
                 Click to connect <ThumbsUp size={'18px'} />
             </a>
-            <div className='flex flex-col mt-15 md:flex-row justify-between items-center'>
+            <div className='flex flex-col mt-15 justify-between items-center'>
                 <p className='md:text-base text-sm md:font-normal font-light'>Copyright © 2025 PhantomDev
                 </p>
                 <div className='flex items-center md:gap-3 gap-6'>
