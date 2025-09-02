@@ -67,7 +67,7 @@ const Hero = () => {
             /> 
 
             <TextGenerateEffect 
-            words='Hi I&apos;m Olajuwon Olasimbo, a frontend developer with over 2years experience in building websites using ReactJs, NextJs and TypeScript. I specialize in creating fast, responsive and user-friendly interfaces with modern tools like TailwindCSS, ShadCN and Aceternity UI. My focus is on clean code and seamless user experiences. Let&apos;s work together to bring your ideas to life.'
+            words='Hi I&apos;m Olajuwon Olasimbo, a full stack developer with loads of experience in building websites using ReactJs, NextJs, ExpressJs and TypeScript. I specialize in creating fast, responsive and user-friendly interfaces with modern tools like TailwindCSS, ShadCN and Aceternity UI. My focus is on clean code and seamless user experiences.'
             className='text-center md:tracking-wider mb-4 text-[18px] md:text-lg lg:text-2xl'
             />
 
