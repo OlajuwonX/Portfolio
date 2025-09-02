@@ -4,7 +4,7 @@ import Grid from "@/components/grid";
 import Hero from "@/components/hero/hero";
 import Projects from "@/components/recentProjects";
 import Clients from "@/components/testimonials";
-import AnimatedSection from "@/components/ui/animatedSection";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
 import { ModeToggle } from "@/components/ui/ToggleMode";
 import { navItems } from "@/data";
@@ -21,21 +21,21 @@ export default function Home() {
         /> 
         <Hero />
         <div className="px-7">
-          <AnimatedSection>
+          <ScrollReveal delay={0.1}>
           <Grid />
-          </AnimatedSection>
-        <AnimatedSection>
+          </ScrollReveal >
+        <ScrollReveal delay={0.2}>
           <Projects />
-          </AnimatedSection>
-        <AnimatedSection>      
+          </ScrollReveal>
+        <ScrollReveal delay={0.3}>
           <Clients />
-          </AnimatedSection>
-        <AnimatedSection>
+          </ScrollReveal>
+        <ScrollReveal delay={0.4}>
           <Experience />
-          </AnimatedSection>
-        <AnimatedSection>       
+          </ScrollReveal>
+        <ScrollReveal delay={0.5}>
           <Footer />
-          </AnimatedSection>
+          </ScrollReveal>
         </div>
       </div>
     </main>

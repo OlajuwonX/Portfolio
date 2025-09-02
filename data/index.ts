@@ -97,7 +97,7 @@ export const projects = [
     title: "Xpay E-commerce webapp",
     des: "Xpay is an e-commerce web app built with Vite, inspired by marketplaces like Jumia but with a unique" +
         " touch. I designed it to feel different and more refined.",
-    img: "/orvyn.png",
+    img: "/xpay.png",
     imgWidth: 800,
     imgHeight: 600,
     iconLists: [ "/re.svg", "/tail.svg", "/ts.svg", "/c.svg"],
@@ -107,7 +107,7 @@ export const projects = [
     id: 3,
     title: "Orvyn Media",
     des: "Orvyn media is a landing page for a social media management company.",
-    img: "/xpay.png",
+    img: "/orvyn.png",
     imgWidth: 800,
     imgHeight: 600,
     iconLists: [ "/re.svg", "/tail.svg", "/ts.svg", "/c.svg"],
